@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "pm2 start server.js --name Horas_Extra",
     "lint": "next lint"
   },
   "dependencies": {
