@@ -1,26 +1,247 @@
+:root{
+  --primary: #222831;
+  --secondary: #DDDDDD;
+  --tertiary: #30475E;
+  --quaternary: #F05454;
+  
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+  background-color: var(--primary);
+  
+
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.main-container{
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-areas: "header header header" 
+                        "nav nav nav"
+                        "aside main main";
+  grid-template-columns: 30% 35% 35%;
+
+  
+}
+
+.titulo{
+  
+  color: var(--secondary);
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-header{
+  
+  grid-area: header;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.main-nav{
+  margin-top: 0px;
+  grid-area: nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.main-nav-list{
+  background-color: var(--tertiary);
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  column-gap: 100px;
+  padding: 15px;
+  border-radius: 10px;
+
+}
+
+.main-nav-item a{
+  text-decoration: none;
+  color: var(--secondary);
+  transition: all 0.1s linear;
+   
+}
+
+.main-nav-item a:hover,.active{
+  font-weight: bold;
+  border-bottom: 4px solid var(--secondary);
+}
+
+.main-aside{
+  grid-area: aside;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  gap: 10px;
+}
+
+.fechas{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.concepto{
+  height: 100px;
+  background-color: inherit;
+  border: 3px solid var(--secondary);
+  border-radius: 10px;
+  padding: 10px;
+  caret-color: var(--quaternary);
+  color: var(--secondary);
+  font-size: 16px;
+  outline: none;
+}
+
+.main-main{
+  grid-area: main;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.selector{
+  width: 80%;
+  text-align: center;
+  background-color: var(--primary);
+  color: var(--secondary);
+  height: 40px;
+  font-size: 16px;
+}
+
+
+.send{
+  width: 40%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: inherit;
+  border: 2px solid var(--secondary);
+  color: var(--secondary);
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.send:hover{
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+.wait{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color : var(--secondary);
+}
+.summary{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.summary h2{
+  color: var(--secondary);
+}
+
+.summary input[type="number"]{
+  width: 40%;
+  height: 10px;
+  border: 3px solid var(--secondary);
+  border-radius: 10px;
+  padding: 10px;
+  caret-color: var(--quaternary);
+  color: var(--quaternary);
+  font-size: 16px;
+  background-color: inherit;
+  outline: none;
+  text-align: center;
+}
+
+.restar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.restar button{
+  width: 10%;
+  height: 30px;
+  border: 3px solid var(--quaternary);
+  background-color: inherit;
+  color: var(--quaternary);
+  font-size: 16px;
+  transition: all 0.4s ease;
+}
+
+
+.restar button:hover{
+
+ 
+  background-color: var(--quaternary);
+  color: var(--secondary);
+
+}
+
+table{
+  margin-top: 40px;
+  width: 90%;
+  border: 3px solid var(--secondary);
+}
+
+tr,td,th{
+  border: 1px solid var(--secondary);
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+th{
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+tr:nth-child(odd){
+  background-color: var(--tertiary);
+  color: var(--secondary);
+}
+
+tr:nth-child(even){
+  background-color: inherit;
+  color: var(--secondary);
+}
+
+tr:hover{
+  font-weight: bold;
 }
