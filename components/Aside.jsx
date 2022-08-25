@@ -1,17 +1,37 @@
 import React from 'react'
 import axios from 'axios'
+
+const RecalculteTime = (time,fechaI) => {
+
+  const H1 = fechaI.getHours()
+  const d1 = fechaI.getDay()
+
+  let tf = time
+
+  if(d1 > 0){
+    tf = H1 >= 21 || H1 < 6 ? tf*1.75 : tf*1.25;
+  }
+  else{
+    tf = H1 >= 21 || H1 < 6 ? tf*2.5 : tf*2;
+  }
+
+  return tf
+
+}
+
 export default function Aside({nombres,data,setData}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log('submit')
         console.log(e.target.persona.value)
-
-        const t1 = new Date(e.target.fechaInicial.value).getTime()
-        const t2 = new Date(e.target.fechaFinal.value).getTime()
-
-        const tf = (t2 - t1) / (1000 * 60 * 60)
-
+        
+        const t1 = new Date(e.target.fechaInicial.value)
+        const t2 = new Date(e.target.fechaFinal.value)
+        console.log(e.target.fechaInicial.value)
+        console.log(e.target.fechaFinal.value)
+        let  tf = (t2.getTime() - t1.getTime()) / (1000 * 60 * 60)
+        tf = RecalculteTime(tf,t1)
         const dataToSend = {
             nombre: e.target.persona.value,
             horas: Math.round(tf),
