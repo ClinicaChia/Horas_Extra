@@ -3,7 +3,7 @@ import axios from 'axios'
 export default function Tabla({data,Actual,setData}) {
     const [num, setNum] = useState(0)
     const Data_Table = data.filter(item => item.nombre == Actual)[0].registro
-
+    const total = data.filter(item => item.nombre == Actual)[0].total
     const HandleChange = (e) => {
         setNum(e.target.value)
     }
@@ -28,7 +28,7 @@ export default function Tabla({data,Actual,setData}) {
   return (
     <div className='summary'>
 
-        <h2>{`${Actual} tiene ${data[0].total} de horas libres`}</h2>
+        <h2>{`${Actual} tiene ${ total } de horas libres`}</h2>
 
         <section className='restar'>
             <input type='number' value={num} onChange={HandleChange} placeholder='horas a restar' />
