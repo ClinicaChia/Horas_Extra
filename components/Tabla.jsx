@@ -101,7 +101,7 @@ export default function Tabla({data,Actual,setData,dataForm,setForm,Index, setIn
             <article className='summary-words'>
 
                 {Filtros.map( (val,index) => {
-                    return <p className='label-summary'>{val}: <span className='span-summary'>{dataFill[index]}</span></p>
+                    return <p key={index} className='label-summary'>{val}: <span className='span-summary'>{dataFill[index]}</span></p>
                 } )}
 
 
