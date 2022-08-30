@@ -22,11 +22,12 @@ body {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-areas: "header header header" 
-                        "nav nav nav"
-                        "aside main main";
-  grid-template-columns: 30% 35% 35%;
+  grid-template-areas: "header header" 
+                        "nav nav"
+                        "aside main";
+  grid-template-columns: 40% 60%;
 
+  
   
 }
 
@@ -89,8 +90,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 400px;
   gap: 10px;
+  width: 80%;
+  padding: 20px;
+  padding-left: 50px;
 }
 
 .fechas{
@@ -121,11 +125,12 @@ body {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-right: 100px;
 
 }
 
 .selector{
-  width: 80%;
+  width: 60%;
   text-align: center;
   background-color: var(--primary);
   color: var(--secondary);
@@ -153,12 +158,13 @@ body {
 
 .wait{
   height: 100%;
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color : var(--secondary);
+  text-align: center;
 }
 .summary{
   width: 100%;
@@ -193,6 +199,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .restar button{
@@ -218,13 +225,19 @@ table{
   margin-top: 40px;
   width: 90%;
   border: 3px solid var(--secondary);
+  margin-bottom: 40px;
 }
 
 tr,td,th{
   border: 1px solid var(--secondary);
   border-collapse: collapse;
-  padding: 10px;
+  padding: 5px;
   text-align: center;
+}
+
+td{
+  max-width: 400px;
+  min-height: 80px;
 }
 
 th{
@@ -242,6 +255,129 @@ tr:nth-child(even){
   color: var(--secondary);
 }
 
-tr:hover{
+
+
+.fecha_item{
+  width: 20px;
+  outline: none;
+  background-color: inherit;
+  border: none;
+  border-bottom: 2px solid var(--secondary);
+  border-radius: 2px;
+  overflow: hidden;
+  color: var(--secondary);
+  text-align: center;
+  font-size: 17px;
+  transition: all 0.2s linear;
+}
+
+.l{
+  width: 50px;
+}
+
+.fecha_item:hover,.fecha_item:focus{
+  border-bottom: 2px solid var(--quaternary);
+
+}
+
+.campo-data{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.item-div{
+    color: var(--secondary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.festivo{
+  color: var(--secondary);
+  font-size: 18px;
+  transition: all 0.2s linear;
+  
+}
+
+.festivo:hover{
+  color: var(--quaternary);
+}
+
+.summary-chart{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+}
+
+.summary-words{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  
+
+}
+
+.chart-container{
+  width: 40%;
+}
+
+.label-summary{
+  color: var(--secondary);
+  font-size: large;
   font-weight: bold;
+
+}
+
+.span-summary{
+  color: var(--quaternary);
+}
+
+.actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+
+.actions button{
+ background-color: inherit;
+ font-size: 16px;
+ border: none;
+}
+
+.del{
+  color: var(--quaternary);
+  font-weight: bold;
+  transition: all 0.1s linear;
+  
+}
+.del:hover{
+  border-bottom: 3px solid var(--quaternary);
+  border-radius: 2px;
+}
+
+.edit{
+  color: var(--secondary);
+  font-weight: bold;
+  transition: all 0.1s linear;
+  
+}
+.edit:hover{
+  border-bottom: 3px solid var(--secondary);
+  border-radius: 2px;
+}
+
+.xs{
+  width: 20%;
+}
+
+.c-xs{
+  height: 50px;
 }
