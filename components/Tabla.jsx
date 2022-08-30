@@ -84,7 +84,11 @@ export default function Tabla({data,Actual,setData,dataForm,setForm,Index, setIn
 
 
         axios.post("/api/save",{Data,Index})
-        .then( (res) =>{alert("Se registro el cobro de las horas, para evitiar cargo de conciencia, debe gastar helado al area 🍦")})
+        .then( (res) =>{
+            alert("Se registro el cobro de las horas, para evitiar cargo de conciencia, debe gastar helado al area 🍦")
+            setData(res.data.query)
+    
+    })
         .catch( (err) =>{alert("Ocurrio un error, digale a alfanumerico que lo solucione 👨‍💻")} )
 
     }
