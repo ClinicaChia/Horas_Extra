@@ -5,6 +5,7 @@ import Chart from '../components/Chart'
 const Filtros = ['H.E.D','H.E.N','H.E.D.F','H.E.N.F']
 
 export default function Tabla({data,Actual,setData,dataForm,setForm,Index, setIndex}) {
+    
     const [Reponer, setReponer] = useState({
         horas: 0,
         tipo: Filtros[0],
@@ -92,6 +93,7 @@ export default function Tabla({data,Actual,setData,dataForm,setForm,Index, setIn
         .catch( (err) =>{alert("Ocurrio un error, digale a alfanumerico que lo solucione 👨‍💻")} )
 
     }
+
   return (
     <div className='summary'>
 
@@ -114,7 +116,7 @@ export default function Tabla({data,Actual,setData,dataForm,setForm,Index, setIn
        </section>
 
        <section className='restar'>
-            <input type='number' name='horas' value={Reponer["horas"]} onChange={HandleChange} placeholder='horas a restar' />
+            <input type='number' autoComplete="off" name='horas' value={Reponer["horas"]} onChange={HandleChange} placeholder='horas a restar' />
             <select value={Reponer["tipo"]}  name='tipo' onChange={HandleChange} className='selector xs'>
                 {Filtros.map( (val,index)=>{
                     return <option key={index} value={val}>{val}</option>
