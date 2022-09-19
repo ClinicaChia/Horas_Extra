@@ -19,7 +19,30 @@ export default function Aside({nombres,data,setData,setForm,Form,Index, setIndex
 
 
     const handleChange = (e) => {
-      e.target.name=="festivo"?setForm({...Form,[e.target.name]:e.target.checked}) : setForm({...Form,[e.target.name]:e.target.value})
+      console.log(e.target.name)
+      if(e.target.name == "festivo"){
+        setForm({...Form,[e.target.name]:e.target.checked})
+      }
+      else{
+        if(e.target.name != "concepto" && e.target.name != "year"){
+          console.log(e.target.name != "concepto" || e.target.name != "year")
+          if( e.target.value.length <= 2){
+            setForm({...Form,[e.target.name]:e.target.value})
+          }
+          else if(  e.target.name == "year" && e.target.value.length <=4){
+            setForm({...Form,[e.target.name]:e.target.value})
+          }
+          else if(e.target.name == "persona"){
+            setForm({...Form,[e.target.name]:e.target.value})
+          }
+        }
+        else{
+          console.log("si")
+          setForm({...Form,[e.target.name]:e.target.value})
+        }
+        
+      }
+      
       
     }
   return (
